@@ -1,0 +1,23 @@
+{
+  "name": "ByeAuto",
+  "short_name": "ByeAuto",
+  "description": "Gestão automotiva inteligente para concessionárias",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#1d4ed8",
+  "icons": [
+    {
+      "src": "/bye_auto_favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/bye_auto_favicon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}
