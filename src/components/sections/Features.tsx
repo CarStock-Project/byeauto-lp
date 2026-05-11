@@ -33,14 +33,14 @@ const features = [
     icon: LuBuilding,
     title: "Multi-loja nativo",
     description:
-      "Cada usuário opera dentro de uma filial. Troque de loja sem precisar deslogar — JWT é reemitido na hora.",
+      "Cada usuário opera dentro de uma filial. Troque de loja com um clique, sem precisar deslogar nem reabrir o sistema.",
     accent: "sky",
   },
   {
     icon: LuShield,
-    title: "Autenticação segura",
+    title: "Acesso seguro por papel",
     description:
-      "JWT assinado com HMAC-SHA512, cookie HttpOnly com SameSite=Strict, BCrypt para senhas e controle de acesso por papel.",
+      "Administradores e operadores enxergam apenas o que precisam. Senhas protegidas e sessão isolada por usuário.",
     accent: "amber",
   },
   {

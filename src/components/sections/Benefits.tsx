@@ -11,19 +11,19 @@ const benefits = [
     icon: LuRefreshCw,
     title: "Multi-filial sem confusão",
     description:
-      "Cada loja enxerga apenas o que é seu. O mesmo usuário pode trocar entre filiais sem reautenticar — o JWT é reemitido na hora.",
+      "Cada loja enxerga apenas o que é seu. O mesmo usuário pode trocar entre filiais com um clique, sem precisar deslogar.",
   },
   {
     icon: LuLock,
-    title: "Segurança de banco",
+    title: "Privacidade dos seus dados",
     description:
-      "JWT HMAC-SHA512, cookie HttpOnly com SameSite=Strict, BCrypt em senhas e CORS configurado por origem.",
+      "Senhas protegidas, sessão por usuário e isolamento total entre filiais. Ninguém vê o que não deve.",
   },
   {
     icon: LuClock,
     title: "Operacional desde o dia 1",
     description:
-      "Migrações Flyway automáticas, dados isolados por tenant via filtros automáticos no repositório, sem configuração extra.",
+      "Cadastre seus veículos e clientes e comece a operar imediatamente. Sem instalação, sem configuração extra.",
   },
 ];
 

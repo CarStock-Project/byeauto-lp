@@ -27,8 +27,8 @@ function ScreenBlock({
   children,
 }: ScreenBlockProps) {
   return (
-    <article className="grid items-center gap-10 lg:grid-cols-12 lg:gap-12">
-      <div className={`space-y-5 lg:col-span-4 ${reverse ? "lg:order-2" : ""}`}>
+    <article className="grid grid-cols-1 items-center gap-10 lg:grid-cols-12 lg:gap-12">
+      <div className={`min-w-0 space-y-5 lg:col-span-4 ${reverse ? "lg:order-2" : ""}`}>
         <div className="inline-flex items-center gap-2 rounded-full border border-border bg-card px-3 py-1 text-xs font-medium text-primary">
           <Icon className="h-3.5 w-3.5" />
           {eyebrow}
@@ -47,7 +47,7 @@ function ScreenBlock({
         </ul>
       </div>
 
-      <div className={`lg:col-span-8 ${reverse ? "lg:order-1" : ""}`}>
+      <div className={`min-w-0 lg:col-span-8 ${reverse ? "lg:order-1" : ""}`}>
         <BrowserFrame url={url}>{children}</BrowserFrame>
       </div>
     </article>
@@ -95,8 +95,8 @@ export function Showcase() {
             bullets={[
               "Hierarquia Marca → Modelo → Versão → Veículo",
               "Status com cores semânticas (Disponível, Reservado, Vendido, Manutenção)",
-              "Upload de múltiplas imagens no MinIO",
-              "Detalhe do veículo em modal sem trocar de rota",
+              "Upload de múltiplas imagens por veículo",
+              "Detalhes do veículo em um clique, sem sair da listagem",
               "Exportar CSV da listagem inteira respeitando os filtros",
             ]}
             icon={LuCar}
@@ -109,12 +109,12 @@ export function Showcase() {
           <ScreenBlock
             eyebrow="Clientes"
             title="Pessoa Física ou Jurídica, no mesmo fluxo"
-            description="Cadastro unificado com validação de CPF/CNPJ e autopreenchimento via Receita Federal. Busca por nome, email ou documento."
+            description="Cadastro unificado com validação de CPF/CNPJ e autopreenchimento dos dados da empresa. Busca por nome, email ou documento."
             bullets={[
               "Validação de CPF, CNPJ e Inscrição Estadual",
-              "Autopreenchimento de empresa via ReceitaWS",
+              "Autopreenchimento dos dados da empresa pelo CNPJ",
               "Múltiplos endereços e telefones por cliente",
-              "Busca instantânea com debounce e destaque do termo",
+              "Busca instantânea com destaque do termo procurado",
               "Mesmo email pode existir em filiais diferentes",
             ]}
             icon={LuUsers}

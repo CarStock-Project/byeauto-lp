@@ -10,7 +10,7 @@ export function Hero() {
       <div className="absolute inset-0 bg-grid-pattern [mask-image:radial-gradient(ellipse_at_top,black_30%,transparent_75%)]" />
       {/* Soft gradient blob */}
       <div
-        className="absolute -top-32 left-1/2 -z-10 h-[480px] w-[820px] -translate-x-1/2 rounded-full opacity-50 blur-3xl"
+        className="absolute -top-32 left-1/2 -z-10 h-[320px] w-[120vw] max-w-[820px] -translate-x-1/2 rounded-full opacity-50 blur-3xl sm:h-[480px]"
         style={{
           background:
             "radial-gradient(closest-side, oklch(0.55 0.18 255 / 0.35), transparent 70%)",
@@ -39,7 +39,7 @@ export function Hero() {
             <p className="text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
               Controle estoque, vendas e clientes em uma única plataforma feita sob medida para
               concessionárias modernas. Dados isolados por filial, dashboard em tempo real e
-              autenticação JWT segura.
+              acesso seguro por usuário.
             </p>
 
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
@@ -70,7 +70,7 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-[oklch(0.6_0.15_250)]" />
-                JWT + cookie HttpOnly
+                Acesso seguro
               </div>
             </div>
           </div>

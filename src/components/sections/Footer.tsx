@@ -39,11 +39,6 @@ export function Footer() {
                   Benefícios
                 </a>
               </li>
-              <li>
-                <a href="#stack" className="transition hover:text-foreground">
-                  Tecnologia
-                </a>
-              </li>
             </ul>
           </div>
 
@@ -68,9 +63,7 @@ export function Footer() {
           <p className="text-xs text-muted-foreground">
             © {new Date().getFullYear()} {siteConfig.name}. Todos os direitos reservados.
           </p>
-          <p className="text-xs text-muted-foreground">
-            Construído com Spring Boot, React e PostgreSQL.
-          </p>
+          <p className="text-xs text-muted-foreground">Gestão automotiva inteligente.</p>
         </div>
       </div>
     </footer>

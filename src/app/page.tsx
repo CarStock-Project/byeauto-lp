@@ -5,7 +5,6 @@ import { Footer } from "@/components/sections/Footer";
 import { Hero } from "@/components/sections/Hero";
 import { Showcase } from "@/components/sections/Showcase";
 import { SiteHeader } from "@/components/sections/SiteHeader";
-import { Stack } from "@/components/sections/Stack";
 
 export default function HomePage() {
   return (
@@ -16,7 +15,6 @@ export default function HomePage() {
         <Features />
         <Showcase />
         <Benefits />
-        <Stack />
         <CTA />
       </main>
       <Footer />

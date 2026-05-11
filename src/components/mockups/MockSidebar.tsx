@@ -23,7 +23,7 @@ export function MockSidebar({
   branchCnpj = "12.345.678/0001-90",
 }: MockSidebarProps) {
   return (
-    <aside className="flex h-full w-64 flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground">
+    <aside className="hidden h-full w-56 flex-col border-r border-sidebar-border bg-sidebar text-sidebar-foreground sm:flex lg:w-64">
       <div className="space-y-4 border-b border-sidebar-border p-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-3">

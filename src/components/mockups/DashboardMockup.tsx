@@ -9,13 +9,13 @@ import { VehicleStatusChart } from "./VehicleStatusChart";
 
 export function DashboardMockup() {
   return (
-    <div className="flex h-[640px] w-full bg-background text-foreground">
+    <div className="flex h-[520px] w-full bg-background text-foreground sm:h-[580px] lg:h-[640px]">
       <MockSidebar active="/dashboard" />
 
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
         <MockHeader />
 
-        <main className="flex-1 overflow-auto bg-background p-6">
+        <main className="flex-1 overflow-auto bg-background p-4 sm:p-6">
           <div className="space-y-6">
             <div>
               <h1 className="text-2xl font-bold text-foreground">Painel</h1>

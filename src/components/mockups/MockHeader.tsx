@@ -14,8 +14,8 @@ export function MockHeader({
   const initials = userEmail.substring(0, 2).toUpperCase();
 
   return (
-    <header className="flex h-14 items-center gap-3 border-b border-border bg-card px-6">
-      <div className="ml-auto flex items-center gap-3">
+    <header className="flex h-14 shrink-0 items-center gap-3 border-b border-border bg-card px-4 sm:px-6">
+      <div className="ml-auto flex items-center gap-2 sm:gap-3">
         <div
           className={`inline-flex items-center gap-1 rounded-md border px-2 py-1 text-[11px] font-medium ${
             role === "ADMIN"
@@ -26,9 +26,9 @@ export function MockHeader({
           <LuShield className="h-3 w-3" />
           {role}
         </div>
-        <div className="flex items-center gap-3">
-          <div className="flex flex-col items-end leading-tight">
-            <span className="max-w-[180px] truncate text-xs font-medium text-foreground">
+        <div className="flex items-center gap-2 sm:gap-3">
+          <div className="hidden flex-col items-end leading-tight sm:flex">
+            <span className="max-w-[140px] truncate text-xs font-medium text-foreground lg:max-w-[180px]">
               {userEmail.split("@")[0]}
             </span>
             <span className="text-[11px] text-muted-foreground">{branchName}</span>

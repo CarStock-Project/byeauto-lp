@@ -8,28 +8,31 @@ import { MockSidebar } from "./MockSidebar";
 
 export function CustomersMockup() {
   return (
-    <div className="flex h-[640px] w-full bg-background text-foreground">
+    <div className="flex h-[520px] w-full bg-background text-foreground sm:h-[580px] lg:h-[640px]">
       <MockSidebar active="/clientes" />
 
-      <div className="flex flex-1 flex-col overflow-hidden">
+      <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
         <MockHeader />
 
-        <main className="flex-1 overflow-auto bg-background p-6">
+        <main className="flex-1 overflow-auto bg-background p-4 sm:p-6">
           <div className="space-y-6">
-            <div className="flex items-center justify-between">
-              <div>
-                <h1 className="text-2xl font-bold text-foreground">Clientes</h1>
-                <p className="text-sm text-muted-foreground">Gerencie seus clientes</p>
+            <div className="flex items-center justify-between gap-3">
+              <div className="min-w-0">
+                <h1 className="text-xl font-bold text-foreground sm:text-2xl">Clientes</h1>
+                <p className="text-xs text-muted-foreground sm:text-sm">Gerencie seus clientes</p>
               </div>
-              <div className="inline-flex items-center gap-x-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-sm">
+              <div className="inline-flex shrink-0 items-center gap-x-2 rounded-lg bg-primary px-3 py-2 text-xs font-medium text-primary-foreground shadow-sm sm:px-4 sm:py-2.5 sm:text-sm">
                 <LuPlus className="h-4 w-4" />
-                Novo Cliente
+                <span className="hidden sm:inline">Novo Cliente</span>
+                <span className="sm:hidden">Novo</span>
               </div>
             </div>
 
             <div className="rounded-xl border border-border bg-card shadow-sm">
-              <div className="flex items-center justify-between border-b border-border p-5">
-                <h2 className="text-lg font-bold text-foreground">Lista de Clientes</h2>
+              <div className="flex flex-col gap-3 border-b border-border p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+                <h2 className="text-base font-bold text-foreground sm:text-lg">
+                  Lista de Clientes
+                </h2>
                 <div className="inline-flex h-9 items-center rounded-md border border-border bg-background px-3 text-xs text-muted-foreground">
                   Buscar clientes...
                 </div>
