@@ -1,11 +1,12 @@
 import { BiEdit } from "react-icons/bi";
-import { LuCar, LuDownload, LuEye, LuPlus } from "react-icons/lu";
+import { LuCar, LuChevronDown, LuDownload, LuEye, LuPlus, LuReceipt } from "react-icons/lu";
 
 import { formatBRL, mockVehicles, statusLabel, type VehicleStatus } from "@/lib/mockData";
 import { cn } from "@/lib/utils";
 
 import { MockHeader } from "./MockHeader";
 import { MockSidebar } from "./MockSidebar";
+import { MockTabs } from "./MockTabs";
 
 function getStatusClasses(status: VehicleStatus) {
   switch (status) {
@@ -20,6 +21,15 @@ function getStatusClasses(status: VehicleStatus) {
   }
 }
 
+function FilterSelect({ label }: { label: string }) {
+  return (
+    <div className="flex h-9 items-center justify-between gap-2 rounded-lg border border-border bg-background px-3 text-xs text-foreground">
+      {label}
+      <LuChevronDown className="h-3.5 w-3.5 text-muted-foreground" />
+    </div>
+  );
+}
+
 export function VehiclesMockup() {
   return (
     <div className="flex h-[520px] w-full bg-background text-foreground sm:h-[580px] lg:h-[640px]">
@@ -30,36 +40,43 @@ export function VehiclesMockup() {
 
         <main className="flex-1 overflow-auto bg-background p-4 sm:p-6">
           <div className="space-y-6">
-            <div className="flex items-start justify-between gap-3">
+            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
               <div className="min-w-0">
                 <h1 className="text-xl font-bold text-foreground sm:text-2xl">Veículos</h1>
                 <p className="text-xs text-muted-foreground sm:text-sm">
                   Gerencie o catálogo de veículos
                 </p>
               </div>
-              <div className="inline-flex shrink-0 items-center gap-x-2 rounded-lg bg-primary px-3 py-2 text-xs font-medium text-primary-foreground shadow-sm sm:px-4 sm:py-2.5 sm:text-sm">
+              <div className="inline-flex shrink-0 items-center gap-x-2 self-start rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-primary-foreground shadow-sm">
                 <LuPlus className="h-4 w-4" />
-                <span className="hidden sm:inline">Novo Veículo</span>
-                <span className="sm:hidden">Novo</span>
+                Novo Veículo
               </div>
             </div>
 
-            <div className="rounded-xl border border-border bg-card shadow-sm">
-              <div className="flex flex-col gap-3 border-b border-border p-4 sm:flex-row sm:items-center sm:justify-between sm:p-5">
+            <MockTabs
+              tabs={[
+                { label: "Veículos", icon: LuCar },
+                { label: "Despesas", icon: LuReceipt },
+              ]}
+              active={0}
+            />
+
+            <div className="rounded-2xl border border-border bg-card shadow-sm">
+              <div className="flex flex-col gap-4 border-b border-border p-4 sm:p-5">
                 <div>
                   <h2 className="text-base font-bold text-foreground sm:text-lg">
-                    Lista de Veículos
+                    Lista de veículos
                   </h2>
                   <span className="text-xs text-muted-foreground">
                     {mockVehicles.length} veículos em estoque
                   </span>
                 </div>
 
-                <div className="flex gap-2">
-                  <div className="inline-flex h-9 items-center rounded-md border border-border bg-background px-3 text-xs">
-                    Todos os status
-                  </div>
-                  <div className="inline-flex h-9 items-center gap-2 rounded-md border border-border bg-background px-3 text-xs font-medium">
+                <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                  <FilterSelect label="Todos os status" />
+                  <FilterSelect label="Todas as condições" />
+                  <FilterSelect label="Próprios e consignados" />
+                  <div className="flex h-9 items-center justify-center gap-2 rounded-lg border border-border bg-background px-3 text-xs font-medium text-foreground">
                     <LuDownload className="h-3.5 w-3.5" />
                     Exportar CSV
                   </div>

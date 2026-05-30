@@ -120,7 +120,7 @@ export const mockCustomers: MockCustomer[] = [
     type: "PF",
     email: "fernanda.alb@email.com",
     document: "***.456.789-**",
-    createdAt: "12/04/2025",
+    createdAt: "12/04/2026",
   },
   {
     id: "2",
@@ -128,7 +128,7 @@ export const mockCustomers: MockCustomer[] = [
     type: "PJ",
     email: "compras@atlantico.com.br",
     document: "**.345.678/0001-**",
-    createdAt: "08/04/2025",
+    createdAt: "08/04/2026",
   },
   {
     id: "3",
@@ -136,7 +136,7 @@ export const mockCustomers: MockCustomer[] = [
     type: "PF",
     email: "rafael.mendes@email.com",
     document: "***.987.123-**",
-    createdAt: "01/04/2025",
+    createdAt: "01/04/2026",
   },
   {
     id: "4",
@@ -144,7 +144,7 @@ export const mockCustomers: MockCustomer[] = [
     type: "PJ",
     email: "frota@logsul.com.br",
     document: "**.789.456/0001-**",
-    createdAt: "28/03/2025",
+    createdAt: "28/03/2026",
   },
   {
     id: "5",
@@ -152,7 +152,7 @@ export const mockCustomers: MockCustomer[] = [
     type: "PF",
     email: "patricia.y@email.com",
     document: "***.222.333-**",
-    createdAt: "22/03/2025",
+    createdAt: "22/03/2026",
   },
 ];
 
@@ -183,51 +183,51 @@ export interface MockSale {
 export const mockSales: MockSale[] = [
   {
     id: "1",
-    date: "28/04/2025",
+    date: "28/05/2026",
     vehicle: "Toyota Corolla XEi",
     customer: "Fernanda Albuquerque",
     seller: "Marcelo Dias",
     value: 168900,
-    profit: 14200,
+    profit: 23800,
     payment: "MIXED",
     status: "ACTIVE",
   },
   {
     id: "2",
-    date: "26/04/2025",
+    date: "26/05/2026",
     vehicle: "Honda Civic Touring",
     customer: "Construtora Atlântico Ltda",
     seller: "Bruna Castro",
     value: 192500,
-    profit: 17800,
+    profit: 28600,
     payment: "FINANCING",
     status: "ACTIVE",
   },
   {
     id: "3",
-    date: "24/04/2025",
+    date: "24/05/2026",
     vehicle: "VW T-Cross Highline",
     customer: "Rafael Mendes",
     seller: "Marcelo Dias",
     value: 154300,
-    profit: 9650,
+    profit: 18400,
     payment: "PIX",
     status: "ACTIVE",
   },
   {
     id: "4",
-    date: "21/04/2025",
+    date: "21/05/2026",
     vehicle: "Hyundai Creta Ultimate",
     customer: "Patrícia Yamada",
     seller: "Bruna Castro",
     value: 142800,
-    profit: 6300,
+    profit: 22800,
     payment: "CASH",
     status: "ACTIVE",
   },
   {
     id: "5",
-    date: "18/04/2025",
+    date: "18/05/2026",
     vehicle: "Jeep Compass Limited",
     customer: "Logística Sul Brasil S.A.",
     seller: "Marcelo Dias",
@@ -240,10 +240,24 @@ export const mockSales: MockSale[] = [
 
 export const salesMetrics = {
   revenue: 658500,
-  netProfit: 47950,
+  grossProfit: 93600,
   count: 4,
   avgTicket: 164625,
+  margin: 14.2,
+  periodFrom: "01/05/2026",
+  periodTo: "30/05/2026",
 };
+
+export interface TopSeller {
+  name: string;
+  revenue: number;
+  count: number;
+}
+
+export const topSellers: TopSeller[] = [
+  { name: "Marcelo Dias", revenue: 323200, count: 2 },
+  { name: "Bruna Castro", revenue: 335300, count: 2 },
+];
 
 export const saleStatusLabel: Record<SaleStatus, string> = {
   ACTIVE: "Ativa",

@@ -76,15 +76,15 @@ export function Showcase() {
           <ScreenBlock
             eyebrow="Painel"
             title="Sua operação resumida em uma única tela"
-            description="KPIs principais, distribuição por status e métricas de clientes — tudo isolado pela filial ativa do usuário."
+            description="KPIs principais, distribuição por status, lucro por período e atividade recente — tudo isolado pela filial ativa do usuário."
             bullets={[
               "Total de veículos e clientes em tempo real",
               "Gráfico de distribuição por status (donut)",
-              "Breakdown de Disponíveis, Reservados, Manutenção e Vendidos",
-              "Estados de loading e empty já resolvidos",
+              "Lucro bruto por período em gráfico de área",
+              "Últimas vendas e ranking de vendedores",
             ]}
             icon={LuChartPie}
-            url="byeauto.com.br/dashboard"
+            url="app.byeauto.com.br/dashboard"
           >
             <DashboardMockup />
           </ScreenBlock>
@@ -92,16 +92,16 @@ export function Showcase() {
           <ScreenBlock
             eyebrow="Veículos"
             title="Catálogo completo, do cadastro à venda"
-            description="Lista paginada com filtros por status, badges visuais, ações rápidas e exportação CSV respeitando os filtros aplicados."
+            description="Lista paginada com abas de Veículos e Despesas, filtros por status, condição e propriedade, mais exportação CSV respeitando os filtros aplicados."
             bullets={[
               "Hierarquia Marca → Modelo → Versão → Veículo",
               "Status com cores semânticas (Disponível, Reservado, Vendido, Manutenção)",
-              "Condição Novo/Seminovo e veículos consignados de terceiros",
-              "Despesas e custos lançados por veículo",
+              "Condição Novo/Seminovo e veículos próprios ou consignados",
+              "Aba de Despesas e custos lançados por veículo",
               "Da listagem direto para a venda e a emissão do contrato",
             ]}
             icon={LuCar}
-            url="byeauto.com.br/veiculos"
+            url="app.byeauto.com.br/veiculos"
             reverse
           >
             <VehiclesMockup />
@@ -110,16 +110,16 @@ export function Showcase() {
           <ScreenBlock
             eyebrow="Vendas"
             title="Feche a venda e veja o lucro na hora"
-            description="Registre a negociação com várias formas de pagamento na mesma venda e acompanhe faturamento, lucro líquido e ticket médio sem planilhas."
+            description="Painel com filtros por período e vendedor: faturamento, lucro bruto, margem e ranking de vendedores — sem planilhas."
             bullets={[
-              "Múltiplas formas de pagamento por venda (entrada, financiamento, PIX, cartão)",
-              "Lucro líquido calculado após custos e despesas do veículo",
-              "Distribuição do lucro entre donos e investidores",
-              "Faturamento e ticket médio por vendedor",
-              "Emissão do contrato de venda direto da negociação",
+              "Filtros por período (De / Até) e por vendedor",
+              "Faturamento, ticket médio e lucro bruto após custos e despesas",
+              "Margem bruta média e faturamento por período em gráfico",
+              "Ranking de faturamento por vendedor",
+              "Múltiplas formas de pagamento e contrato emitido na negociação",
             ]}
             icon={LuReceipt}
-            url="byeauto.com.br/vendas"
+            url="app.byeauto.com.br/vendas"
           >
             <SalesMockup />
           </ScreenBlock>
@@ -136,7 +136,7 @@ export function Showcase() {
               "Mesmo email pode existir em filiais diferentes",
             ]}
             icon={LuUsers}
-            url="byeauto.com.br/clientes"
+            url="app.byeauto.com.br/clientes"
             reverse
           >
             <CustomersMockup />

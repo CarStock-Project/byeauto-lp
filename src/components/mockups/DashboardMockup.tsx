@@ -1,11 +1,22 @@
-import { LuCar, LuUsers } from "react-icons/lu";
+import { LuArrowRight, LuCar, LuEye, LuHandshake, LuTrophy, LuUsers } from "react-icons/lu";
 
-import { dashboardMetrics, STATUS_COLORS } from "@/lib/mockData";
+import {
+  dashboardMetrics,
+  formatBRL,
+  mockSales,
+  saleStatusLabel,
+  STATUS_COLORS,
+  topSellers,
+} from "@/lib/mockData";
+import { cn } from "@/lib/utils";
 
+import { MiniAreaChart } from "./MiniCharts";
 import { MockHeader } from "./MockHeader";
 import { MockSidebar } from "./MockSidebar";
 import { StatCard } from "./StatCard";
 import { VehicleStatusChart } from "./VehicleStatusChart";
+
+const recentSales = mockSales.slice(0, 5);
 
 export function DashboardMockup() {
   return (
@@ -101,6 +112,105 @@ export function DashboardMockup() {
                   icon={LuCar}
                   accent="sky"
                 />
+              </div>
+            </div>
+
+            <MiniAreaChart
+              title="Lucro bruto por período"
+              max={80000}
+              points={[
+                { label: "26/05", value: 75000 },
+                { label: "27/05", value: 40000 },
+                { label: "28/05", value: 6000 },
+              ]}
+            />
+
+            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                <div className="mb-4 flex items-start justify-between">
+                  <div className="flex items-center gap-2">
+                    <LuHandshake className="h-4 w-4 text-primary" />
+                    <div>
+                      <h3 className="text-sm font-semibold text-foreground">Últimas vendas</h3>
+                      <p className="text-xs text-muted-foreground">
+                        {recentSales.length} vendas recentes
+                      </p>
+                    </div>
+                  </div>
+                  <span className="inline-flex items-center gap-1 text-xs font-medium text-primary">
+                    Ver todas
+                    <LuArrowRight className="h-3.5 w-3.5" />
+                  </span>
+                </div>
+
+                <ul className="divide-y divide-border">
+                  {recentSales.map((s) => (
+                    <li key={s.id} className="flex items-center gap-3 py-2.5">
+                      <div className="min-w-0 flex-1">
+                        <div className="flex items-center gap-2">
+                          <span className="truncate text-sm font-medium text-foreground">
+                            {s.vehicle}
+                          </span>
+                          <span
+                            className={cn(
+                              "shrink-0 rounded-full px-2 py-0.5 text-[10px] font-semibold",
+                              s.status === "ACTIVE"
+                                ? "bg-sky-500/15 text-sky-600"
+                                : "bg-destructive/15 text-destructive",
+                            )}
+                          >
+                            {saleStatusLabel[s.status]}
+                          </span>
+                        </div>
+                        <p className="truncate text-xs text-muted-foreground">
+                          {s.customer} · {s.date}
+                        </p>
+                      </div>
+                      <span className="shrink-0 text-sm font-semibold tabular-nums text-foreground">
+                        {formatBRL(s.value)}
+                      </span>
+                      <LuEye className="h-4 w-4 shrink-0 text-muted-foreground" />
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+                <div className="mb-4 flex items-center gap-2">
+                  <LuTrophy className="h-4 w-4 text-amber-500" />
+                  <div>
+                    <h3 className="text-sm font-semibold text-foreground">Top vendedores</h3>
+                    <p className="text-xs text-muted-foreground">
+                      Ranking por faturamento · últimos 30 dias
+                    </p>
+                  </div>
+                </div>
+
+                <ul className="space-y-3">
+                  {[...topSellers]
+                    .sort((a, b) => b.revenue - a.revenue)
+                    .map((s, i) => (
+                      <li key={s.name} className="flex items-center gap-3">
+                        <span
+                          className={cn(
+                            "flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold",
+                            i === 0
+                              ? "bg-amber-500/15 text-amber-600"
+                              : "bg-muted text-muted-foreground",
+                          )}
+                        >
+                          {i + 1}
+                        </span>
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-sm font-medium text-foreground">{s.name}</p>
+                          <p className="text-xs text-muted-foreground">{s.count} vendas</p>
+                        </div>
+                        <span className="shrink-0 text-sm font-semibold tabular-nums text-foreground">
+                          {formatBRL(s.revenue)}
+                        </span>
+                      </li>
+                    ))}
+                </ul>
               </div>
             </div>
           </div>

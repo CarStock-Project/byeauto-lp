@@ -8,6 +8,7 @@ interface StatCardProps {
   hint?: string;
   icon: IconType;
   accent?: "primary" | "emerald" | "amber" | "violet" | "sky";
+  valueClassName?: string;
 }
 
 const accentStyles: Record<NonNullable<StatCardProps["accent"]>, string> = {
@@ -18,12 +19,26 @@ const accentStyles: Record<NonNullable<StatCardProps["accent"]>, string> = {
   sky: "bg-sky-500/10 text-sky-600",
 };
 
-export function StatCard({ title, value, hint, icon: Icon, accent = "primary" }: StatCardProps) {
+export function StatCard({
+  title,
+  value,
+  hint,
+  icon: Icon,
+  accent = "primary",
+  valueClassName,
+}: StatCardProps) {
   return (
     <div className="flex items-start justify-between gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm">
       <div className="min-w-0">
         <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{title}</p>
-        <p className="mt-2 text-3xl font-bold tracking-tight text-foreground">{value}</p>
+        <p
+          className={cn(
+            "mt-2 text-3xl font-bold tracking-tight text-foreground",
+            valueClassName,
+          )}
+        >
+          {value}
+        </p>
         {hint && <p className="mt-1 text-xs text-muted-foreground">{hint}</p>}
       </div>
       <span
