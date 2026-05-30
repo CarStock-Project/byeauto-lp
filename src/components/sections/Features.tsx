@@ -2,9 +2,12 @@ import {
   LuBuilding,
   LuCar,
   LuChartPie,
-  LuDownload,
+  LuFileText,
+  LuHandshake,
+  LuReceipt,
   LuShield,
   LuUsers,
+  LuWallet,
 } from "react-icons/lu";
 
 const features = [
@@ -12,21 +15,49 @@ const features = [
     icon: LuCar,
     title: "Catálogo de veículos",
     description:
-      "Hierarquia completa Marca → Modelo → Versão → Veículo com status, fotos, opcionais, quilometragem, chassi e preço de custo/venda.",
+      "Hierarquia completa Marca → Modelo → Versão → Veículo, com status, fotos, opcionais, condição Novo/Seminovo e preço de custo/venda. Exporte a listagem em CSV respeitando os filtros.",
     accent: "primary",
   },
   {
-    icon: LuChartPie,
-    title: "Dashboard operacional",
+    icon: LuReceipt,
+    title: "Vendas e pagamentos",
     description:
-      "Métricas em tempo real: total de veículos, distribuição por status, total de clientes — sempre filtrado pela filial ativa.",
+      "Registre a venda do início ao fim, com múltiplas formas de pagamento na mesma negociação (entrada, financiamento, PIX, cartão) e acompanhamento do lucro líquido.",
     accent: "emerald",
   },
   {
-    icon: LuUsers,
-    title: "Gestão de clientes",
+    icon: LuFileText,
+    title: "Contratos personalizados",
     description:
-      "Suporte completo a Pessoa Física e Jurídica, com validação de CPF/CNPJ e autopreenchimento via Receita Federal.",
+      "Crie seus próprios modelos com variáveis dinâmicas e emita contratos de venda, compra e consignação já preenchidos com os dados do veículo e do cliente.",
+    accent: "violet",
+  },
+  {
+    icon: LuHandshake,
+    title: "Consignação de veículos",
+    description:
+      "Receba veículos de terceiros para vender e controle a comissão da loja por percentual ou valor fixo — com contrato de consignação próprio.",
+    accent: "sky",
+  },
+  {
+    icon: LuChartPie,
+    title: "Distribuição de lucro",
+    description:
+      "Rateie automaticamente o lucro de cada venda entre donos e investidores do veículo e acompanhe o ranking de quem mais rende com o widget Top Donos.",
+    accent: "amber",
+  },
+  {
+    icon: LuWallet,
+    title: "Despesas por veículo",
+    description:
+      "Lance os custos de cada veículo (preparação, documentação, reparos) e veja o impacto real na margem antes de fechar o negócio.",
+    accent: "muted",
+  },
+  {
+    icon: LuUsers,
+    title: "Clientes e equipe",
+    description:
+      "Cadastro de clientes Pessoa Física e Jurídica com validação de CPF/CNPJ, além de gestão de funcionários e cargos da loja.",
     accent: "violet",
   },
   {
@@ -40,15 +71,8 @@ const features = [
     icon: LuShield,
     title: "Acesso seguro por papel",
     description:
-      "Administradores e operadores enxergam apenas o que precisam. Senhas protegidas e sessão isolada por usuário.",
-    accent: "amber",
-  },
-  {
-    icon: LuDownload,
-    title: "Exportação CSV",
-    description:
-      "Exporte a listagem inteira de veículos respeitando os filtros aplicados, pronto para abrir no Excel.",
-    accent: "muted",
+      "Administradores e operadores enxergam apenas o que precisam, com dados financeiros mascarados e sessão isolada por usuário.",
+    accent: "primary",
   },
 ] as const;
 

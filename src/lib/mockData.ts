@@ -156,6 +156,100 @@ export const mockCustomers: MockCustomer[] = [
   },
 ];
 
+export type SalePaymentMethod = "CASH" | "PIX" | "CARD" | "FINANCING" | "MIXED";
+
+export const paymentMethodLabel: Record<SalePaymentMethod, string> = {
+  CASH: "Dinheiro",
+  PIX: "PIX",
+  CARD: "Cartão",
+  FINANCING: "Financiamento",
+  MIXED: "Misto",
+};
+
+export type SaleStatus = "ACTIVE" | "CANCELED";
+
+export interface MockSale {
+  id: string;
+  date: string;
+  vehicle: string;
+  customer: string;
+  seller: string;
+  value: number;
+  profit: number;
+  payment: SalePaymentMethod;
+  status: SaleStatus;
+}
+
+export const mockSales: MockSale[] = [
+  {
+    id: "1",
+    date: "28/04/2025",
+    vehicle: "Toyota Corolla XEi",
+    customer: "Fernanda Albuquerque",
+    seller: "Marcelo Dias",
+    value: 168900,
+    profit: 14200,
+    payment: "MIXED",
+    status: "ACTIVE",
+  },
+  {
+    id: "2",
+    date: "26/04/2025",
+    vehicle: "Honda Civic Touring",
+    customer: "Construtora Atlântico Ltda",
+    seller: "Bruna Castro",
+    value: 192500,
+    profit: 17800,
+    payment: "FINANCING",
+    status: "ACTIVE",
+  },
+  {
+    id: "3",
+    date: "24/04/2025",
+    vehicle: "VW T-Cross Highline",
+    customer: "Rafael Mendes",
+    seller: "Marcelo Dias",
+    value: 154300,
+    profit: 9650,
+    payment: "PIX",
+    status: "ACTIVE",
+  },
+  {
+    id: "4",
+    date: "21/04/2025",
+    vehicle: "Hyundai Creta Ultimate",
+    customer: "Patrícia Yamada",
+    seller: "Bruna Castro",
+    value: 142800,
+    profit: 6300,
+    payment: "CASH",
+    status: "ACTIVE",
+  },
+  {
+    id: "5",
+    date: "18/04/2025",
+    vehicle: "Jeep Compass Limited",
+    customer: "Logística Sul Brasil S.A.",
+    seller: "Marcelo Dias",
+    value: 245000,
+    profit: 0,
+    payment: "CARD",
+    status: "CANCELED",
+  },
+];
+
+export const salesMetrics = {
+  revenue: 658500,
+  netProfit: 47950,
+  count: 4,
+  avgTicket: 164625,
+};
+
+export const saleStatusLabel: Record<SaleStatus, string> = {
+  ACTIVE: "Ativa",
+  CANCELED: "Cancelada",
+};
+
 export function formatBRL(value: number): string {
   return new Intl.NumberFormat("pt-BR", {
     style: "currency",

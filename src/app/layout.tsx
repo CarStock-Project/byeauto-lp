@@ -109,11 +109,13 @@ const jsonLd = {
   },
   featureList: [
     "Controle de estoque de veículos em tempo real",
-    "Dashboard operacional com métricas por filial",
+    "Registro de vendas com múltiplas formas de pagamento",
+    "Contratos de venda, compra e consignação personalizáveis",
+    "Consignação de veículos com controle de comissão",
+    "Distribuição de lucro entre sócios e investidores",
+    "Controle de despesas por veículo",
     "Gestão de clientes (Pessoa Física e Jurídica)",
     "Autenticação multi-loja com isolamento de dados",
-    "Exportação de relatórios em CSV",
-    "Validação automática de CPF/CNPJ",
   ],
 };
 

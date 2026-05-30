@@ -10,7 +10,7 @@ export const siteConfig = {
   shortName: "ByeAuto",
   title: "ByeAuto — Gestão automotiva inteligente para concessionárias",
   description:
-    "Plataforma SaaS multi-loja para concessionárias: controle de estoque em tempo real, dashboard operacional, gestão de clientes e veículos com isolamento por filial.",
+    "Plataforma SaaS multi-loja para concessionárias: estoque em tempo real, vendas com múltiplas formas de pagamento, contratos, consignação e distribuição de lucro, com isolamento por filial.",
   url: "https://byeauto.com.br",
   appUrl: "https://app.byeauto.com.br/login",
   ogImage: "/og-image.png",
@@ -21,6 +21,9 @@ export const siteConfig = {
     "controle de estoque de veículos",
     "CRM automotivo",
     "sistema para revenda de veículos",
+    "controle de vendas de veículos",
+    "contrato de compra e venda de veículos",
+    "consignação de veículos",
     "SaaS automotivo",
     "multi-loja",
     "ByeAuto",

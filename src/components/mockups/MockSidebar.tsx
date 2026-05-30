@@ -1,18 +1,19 @@
 import Image from "next/image";
 import { BiHome } from "react-icons/bi";
 import { FaArrowRightArrowLeft } from "react-icons/fa6";
-import { LuCar, LuStore, LuUsers } from "react-icons/lu";
+import { LuCar, LuReceipt, LuStore, LuUsers } from "react-icons/lu";
 
 import { cn } from "@/lib/utils";
 
 const menuItems = [
   { id: "/dashboard", label: "Painel", icon: BiHome },
   { id: "/veiculos", label: "Veículos", icon: LuCar },
+  { id: "/vendas", label: "Vendas", icon: LuReceipt },
   { id: "/clientes", label: "Clientes", icon: LuUsers },
 ] as const;
 
 interface MockSidebarProps {
-  active: "/dashboard" | "/veiculos" | "/clientes";
+  active: "/dashboard" | "/veiculos" | "/vendas" | "/clientes";
   branchName?: string;
   branchCnpj?: string;
 }

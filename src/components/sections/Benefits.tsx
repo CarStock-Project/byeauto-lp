@@ -3,9 +3,9 @@ import { LuClock, LuLock, LuRefreshCw, LuTrendingUp } from "react-icons/lu";
 const benefits = [
   {
     icon: LuTrendingUp,
-    title: "Decisões baseadas em dados",
+    title: "Lucro claro em cada venda",
     description:
-      "Veja a saúde do estoque, taxa de conversão por status e volume de clientes ativos sem precisar montar planilhas.",
+      "Acompanhe o lucro líquido, o rateio entre sócios e a saúde do estoque sem montar planilhas — tudo calculado pela plataforma.",
   },
   {
     icon: LuRefreshCw,

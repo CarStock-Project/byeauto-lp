@@ -1,8 +1,9 @@
-import { LuCar, LuChartPie, LuUsers } from "react-icons/lu";
+import { LuCar, LuChartPie, LuReceipt, LuUsers } from "react-icons/lu";
 
 import { BrowserFrame } from "@/components/BrowserFrame";
 import { CustomersMockup } from "@/components/mockups/CustomersMockup";
 import { DashboardMockup } from "@/components/mockups/DashboardMockup";
+import { SalesMockup } from "@/components/mockups/SalesMockup";
 import { VehiclesMockup } from "@/components/mockups/VehiclesMockup";
 
 interface ScreenBlockProps {
@@ -95,15 +96,32 @@ export function Showcase() {
             bullets={[
               "Hierarquia Marca → Modelo → Versão → Veículo",
               "Status com cores semânticas (Disponível, Reservado, Vendido, Manutenção)",
-              "Upload de múltiplas imagens por veículo",
-              "Detalhes do veículo em um clique, sem sair da listagem",
-              "Exportar CSV da listagem inteira respeitando os filtros",
+              "Condição Novo/Seminovo e veículos consignados de terceiros",
+              "Despesas e custos lançados por veículo",
+              "Da listagem direto para a venda e a emissão do contrato",
             ]}
             icon={LuCar}
             url="byeauto.com.br/veiculos"
             reverse
           >
             <VehiclesMockup />
+          </ScreenBlock>
+
+          <ScreenBlock
+            eyebrow="Vendas"
+            title="Feche a venda e veja o lucro na hora"
+            description="Registre a negociação com várias formas de pagamento na mesma venda e acompanhe faturamento, lucro líquido e ticket médio sem planilhas."
+            bullets={[
+              "Múltiplas formas de pagamento por venda (entrada, financiamento, PIX, cartão)",
+              "Lucro líquido calculado após custos e despesas do veículo",
+              "Distribuição do lucro entre donos e investidores",
+              "Faturamento e ticket médio por vendedor",
+              "Emissão do contrato de venda direto da negociação",
+            ]}
+            icon={LuReceipt}
+            url="byeauto.com.br/vendas"
+          >
+            <SalesMockup />
           </ScreenBlock>
 
           <ScreenBlock
@@ -119,6 +137,7 @@ export function Showcase() {
             ]}
             icon={LuUsers}
             url="byeauto.com.br/clientes"
+            reverse
           >
             <CustomersMockup />
           </ScreenBlock>

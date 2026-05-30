@@ -37,9 +37,9 @@ export function Hero() {
             </h1>
 
             <p className="text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Controle estoque, vendas e clientes em uma única plataforma feita sob medida para
-              concessionárias modernas. Dados isolados por filial, dashboard em tempo real e
-              acesso seguro por usuário.
+              Do cadastro do veículo à venda, ao contrato e à distribuição do lucro entre os
+              sócios — toda a operação da revenda numa única plataforma. Dados isolados por filial,
+              dashboard em tempo real e acesso seguro por usuário.
             </p>
 
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
@@ -66,11 +66,11 @@ export function Hero() {
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-[oklch(0.75_0.15_85)]" />
-                Multi-loja
+                Vendas e contratos
               </div>
               <div className="flex items-center gap-2">
                 <div className="h-1.5 w-1.5 rounded-full bg-[oklch(0.6_0.15_250)]" />
-                Acesso seguro
+                Multi-loja
               </div>
             </div>
           </div>
