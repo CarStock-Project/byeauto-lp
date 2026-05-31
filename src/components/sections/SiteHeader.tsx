@@ -38,6 +38,9 @@ export function SiteHeader() {
           <a href="#beneficios" className="text-muted-foreground transition hover:text-foreground">
             Benefícios
           </a>
+          <a href="#planos" className="text-muted-foreground transition hover:text-foreground">
+            Planos
+          </a>
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">

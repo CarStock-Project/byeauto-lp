@@ -14,6 +14,7 @@ const links: MobileNavLink[] = [
   { href: "#features", label: "Funcionalidades" },
   { href: "#telas", label: "Telas" },
   { href: "#beneficios", label: "Benefícios" },
+  { href: "#planos", label: "Planos" },
 ];
 
 export function MobileNav() {

@@ -15,6 +15,7 @@ export const STATUS_COLORS = {
 } as const;
 
 export type VehicleStatus = "AVAILABLE" | "RESERVED" | "SOLD" | "MAINTENANCE";
+export type VehicleCondition = "NEW" | "USED";
 
 export interface MockVehicle {
   id: string;
@@ -26,6 +27,9 @@ export interface MockVehicle {
   plate: string;
   price: number;
   status: VehicleStatus;
+  condition: VehicleCondition;
+  mileage: number;
+  consigned?: boolean;
 }
 
 export const mockVehicles: MockVehicle[] = [
@@ -39,6 +43,8 @@ export const mockVehicles: MockVehicle[] = [
     plate: "RGT-4A21",
     price: 168900,
     status: "AVAILABLE",
+    condition: "NEW",
+    mileage: 0,
   },
   {
     id: "2",
@@ -50,6 +56,8 @@ export const mockVehicles: MockVehicle[] = [
     plate: "FHE-9C72",
     price: 192500,
     status: "RESERVED",
+    condition: "USED",
+    mileage: 28500,
   },
   {
     id: "3",
@@ -61,6 +69,9 @@ export const mockVehicles: MockVehicle[] = [
     plate: "BRA-2E19",
     price: 154300,
     status: "AVAILABLE",
+    condition: "USED",
+    mileage: 12000,
+    consigned: true,
   },
   {
     id: "4",
@@ -72,6 +83,8 @@ export const mockVehicles: MockVehicle[] = [
     plate: "KLM-7T08",
     price: 245000,
     status: "MAINTENANCE",
+    condition: "USED",
+    mileage: 41200,
   },
   {
     id: "5",
@@ -83,6 +96,8 @@ export const mockVehicles: MockVehicle[] = [
     plate: "POP-3K55",
     price: 142800,
     status: "AVAILABLE",
+    condition: "USED",
+    mileage: 19800,
   },
   {
     id: "6",
@@ -94,6 +109,9 @@ export const mockVehicles: MockVehicle[] = [
     plate: "QWE-8N44",
     price: 138900,
     status: "SOLD",
+    condition: "USED",
+    mileage: 33450,
+    consigned: true,
   },
 ];
 
@@ -103,6 +121,16 @@ export const statusLabel: Record<VehicleStatus, string> = {
   SOLD: "Vendido",
   MAINTENANCE: "Manutenção",
 };
+
+export const conditionLabel: Record<VehicleCondition, string> = {
+  NEW: "Novo",
+  USED: "Seminovo",
+};
+
+export function formatKm(value: number): string {
+  if (value === 0) return "0 km";
+  return `${new Intl.NumberFormat("pt-BR").format(value)} km`;
+}
 
 export interface MockCustomer {
   id: string;
