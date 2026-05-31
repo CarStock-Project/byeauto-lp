@@ -44,18 +44,13 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
+          
           <a
-            href={siteConfig.appUrl}
-            className="hidden text-sm font-medium text-muted-foreground transition hover:text-foreground sm:inline-flex"
-          >
-            Entrar
-          </a>
-          <a
-            href={siteConfig.appUrl}
+            href={siteConfig.whatsappUrl}
             className="group inline-flex items-center gap-1.5 rounded-lg bg-primary px-3 py-2 text-xs font-medium text-primary-foreground shadow-sm transition hover:bg-primary/90 sm:px-4 sm:text-sm"
           >
-            <span className="hidden sm:inline">Acessar plataforma</span>
-            <span className="sm:hidden">Acessar</span>
+            <span className="hidden sm:inline">Solicitar demonstração</span>
+            <span className="sm:hidden">Demo</span>
             <LuArrowRight className="h-3.5 w-3.5 transition group-hover:translate-x-0.5" />
           </a>
 

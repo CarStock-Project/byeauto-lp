@@ -1,4 +1,16 @@
-import { LuArrowRight, LuCar, LuEye, LuHandshake, LuTrophy, LuUsers } from "react-icons/lu";
+import {
+  LuArrowRight,
+  LuCalendar,
+  LuCar,
+  LuDollarSign,
+  LuEye,
+  LuHandshake,
+  LuPercent,
+  LuShoppingBag,
+  LuTrendingUp,
+  LuTrophy,
+  LuUsers,
+} from "react-icons/lu";
 
 import {
   dashboardMetrics,
@@ -20,38 +32,75 @@ const recentSales = mockSales.slice(0, 5);
 
 export function DashboardMockup() {
   return (
-    <div className="flex h-[520px] w-full bg-background text-foreground sm:h-[580px] lg:h-[640px]">
+    <div className="@container/frame flex h-[520px] w-full bg-background text-foreground sm:h-[580px] lg:h-[640px]">
       <MockSidebar active="/dashboard" />
 
-      <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
+      <div className="@container flex min-w-0 flex-1 flex-col overflow-hidden">
         <MockHeader />
 
-        <main className="flex-1 overflow-auto bg-background p-4 sm:p-6">
+        <main className="flex-1 overflow-auto bg-background p-4 @xl:p-6">
           <div className="space-y-6">
-            <div>
-              <h1 className="text-2xl font-bold text-foreground">Painel</h1>
-              <p className="text-sm text-muted-foreground">Visão geral do seu negócio</p>
+            <div className="flex flex-col gap-3 @lg:flex-row @lg:items-end @lg:justify-between">
+              <div>
+                <h1 className="text-xl font-bold text-foreground @md:text-2xl">Painel</h1>
+                <p className="text-sm text-muted-foreground">Visão geral do seu negócio</p>
+              </div>
+              <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5">
+                  <LuCalendar className="h-3.5 w-3.5" />
+                  01/05/2026
+                </span>
+                <span aria-hidden>→</span>
+                <span className="inline-flex items-center gap-1.5 rounded-lg border border-border bg-card px-3 py-1.5">
+                  <LuCalendar className="h-3.5 w-3.5" />
+                  30/05/2026
+                </span>
+              </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 @md:grid-cols-2 @4xl:grid-cols-4">
               <StatCard
-                title="Total de veículos"
-                value={dashboardMetrics.totalVehicles}
-                hint="Estoque atual"
-                icon={LuCar}
-                accent="primary"
+                title="Faturamento"
+                value={formatBRL(dashboardMetrics.revenue)}
+                hint="Da loja · últimos 30 dias"
+                icon={LuDollarSign}
+                accent="emerald"
+                valueClassName="text-emerald-600"
               />
               <StatCard
-                title="Total de clientes"
-                value={dashboardMetrics.totalCustomers}
-                hint="Cadastrados na base"
-                icon={LuUsers}
+                title="Lucro bruto"
+                value={formatBRL(dashboardMetrics.grossProfit)}
+                hint="Da loja · últimos 30 dias"
+                icon={LuTrendingUp}
+                accent="emerald"
+                valueClassName="text-emerald-600"
+              />
+              <StatCard
+                title="Total de vendas"
+                value={dashboardMetrics.salesCount}
+                hint="Da loja · últimos 30 dias"
+                icon={LuShoppingBag}
+                accent="sky"
+              />
+              <StatCard
+                title="Ticket médio"
+                value={formatBRL(dashboardMetrics.avgTicket)}
+                hint="Da loja · últimos 30 dias"
+                icon={LuPercent}
                 accent="violet"
               />
             </div>
 
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-3">
-              <div className="lg:col-span-2">
+            <StatCard
+              title="Total de clientes"
+              value={dashboardMetrics.totalCustomers}
+              hint="Cadastrados na base"
+              icon={LuUsers}
+              accent="primary"
+            />
+
+            <div className="grid grid-cols-1 gap-4 @3xl:grid-cols-3">
+              <div className="@3xl:col-span-2">
                 <VehicleStatusChart
                   total={dashboardMetrics.totalVehicles}
                   slices={[
@@ -83,27 +132,13 @@ export function DashboardMockup() {
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-4 lg:grid-cols-1">
+              <div className="grid grid-cols-2 gap-4 @3xl:grid-cols-1">
                 <StatCard
                   title="Disponíveis"
                   value={dashboardMetrics.available.total}
                   hint={`${dashboardMetrics.available.percent}% do estoque`}
                   icon={LuCar}
                   accent="emerald"
-                />
-                <StatCard
-                  title="Reservados"
-                  value={dashboardMetrics.reserved.total}
-                  hint={`${dashboardMetrics.reserved.percent}% do estoque`}
-                  icon={LuCar}
-                  accent="violet"
-                />
-                <StatCard
-                  title="Manutenção"
-                  value={dashboardMetrics.maintenance.total}
-                  hint={`${dashboardMetrics.maintenance.percent}% do estoque`}
-                  icon={LuCar}
-                  accent="amber"
                 />
                 <StatCard
                   title="Vendidos"
@@ -125,7 +160,7 @@ export function DashboardMockup() {
               ]}
             />
 
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 @3xl:grid-cols-2">
               <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
                 <div className="mb-4 flex items-start justify-between">
                   <div className="flex items-center gap-2">
@@ -179,9 +214,9 @@ export function DashboardMockup() {
                 <div className="mb-4 flex items-center gap-2">
                   <LuTrophy className="h-4 w-4 text-amber-500" />
                   <div>
-                    <h3 className="text-sm font-semibold text-foreground">Top vendedores</h3>
+                    <h3 className="text-sm font-semibold text-foreground">Ranking de vendedores</h3>
                     <p className="text-xs text-muted-foreground">
-                      Ranking por faturamento · últimos 30 dias
+                      Por faturamento · últimos 30 dias
                     </p>
                   </div>
                 </div>

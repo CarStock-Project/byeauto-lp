@@ -1,4 +1,13 @@
+export const activeBranch = {
+  name: "Auto Center Premium",
+  cnpj: "10.680.710/0001-63",
+};
+
 export const dashboardMetrics = {
+  revenue: 172333,
+  grossProfit: 81433,
+  salesCount: 3,
+  avgTicket: 57444,
   totalVehicles: 84,
   totalCustomers: 312,
   available: { total: 52, percent: 62 },

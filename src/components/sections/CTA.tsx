@@ -20,16 +20,16 @@ export function CTA() {
             Pronto para modernizar sua revenda?
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-balance text-muted-foreground">
-            Crie sua conta, importe seu estoque e tenha um dashboard operacional rodando hoje
+            Crie sua conta, cadastre seu estoque e tenha o painel da sua loja funcionando hoje
             mesmo. Sem cartão de crédito.
           </p>
 
           <div className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href={siteConfig.appUrl}
+              href={siteConfig.whatsappUrl}
               className="group inline-flex h-12 items-center gap-2 rounded-lg bg-primary px-7 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/20 transition hover:bg-primary/90"
             >
-              Acessar a plataforma
+              Solicitar demonstração
               <LuArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </a>
             <a

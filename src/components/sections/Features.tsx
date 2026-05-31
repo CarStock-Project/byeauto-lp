@@ -1,78 +1,80 @@
 import {
-  LuBuilding,
+  LuBriefcase,
   LuCar,
-  LuChartPie,
   LuFileText,
-  LuHandshake,
+  LuGauge,
+  LuMegaphone,
   LuReceipt,
-  LuShield,
+  LuShieldCheck,
+  LuStore,
   LuUsers,
-  LuWallet,
 } from "react-icons/lu";
 
 const features = [
   {
-    icon: LuCar,
-    title: "Catálogo de veículos",
+    icon: LuGauge,
+    title: "Painel",
     description:
-      "Hierarquia completa Marca → Modelo → Versão → Veículo, com status, fotos, opcionais, condição Novo/Seminovo e preço de custo/venda. Exporte a listagem em CSV respeitando os filtros.",
+      "Visão geral da sua loja em uma só tela: faturamento, lucro, total de vendas, ticket médio, total de clientes, situação do estoque, ranking de vendedores e as últimas vendas.",
     accent: "primary",
   },
   {
-    icon: LuReceipt,
-    title: "Vendas e pagamentos",
+    icon: LuCar,
+    title: "Veículos",
     description:
-      "Registre a venda do início ao fim, com múltiplas formas de pagamento na mesma negociação (entrada, financiamento, PIX, cartão) e acompanhamento do lucro líquido.",
-    accent: "emerald",
-  },
-  {
-    icon: LuFileText,
-    title: "Contratos personalizados",
-    description:
-      "Crie seus próprios modelos com variáveis dinâmicas e emita contratos de venda, compra e consignação já preenchidos com os dados do veículo e do cliente.",
-    accent: "violet",
-  },
-  {
-    icon: LuHandshake,
-    title: "Consignação de veículos",
-    description:
-      "Receba veículos de terceiros para vender e controle a comissão da loja por percentual ou valor fixo — com contrato de consignação próprio.",
+      "Acompanhe o estoque e as despesas do veículo. Filtre por veículos disponíveis, vendidos, em manutenção ou consignados, lance as despesas de cada veículo e exporte a lista do estoque em CSV.",
     accent: "sky",
-  },
-  {
-    icon: LuChartPie,
-    title: "Distribuição de lucro",
-    description:
-      "Rateie automaticamente o lucro de cada venda entre donos e investidores do veículo e acompanhe o ranking de quem mais rende com o widget Top Donos.",
-    accent: "amber",
-  },
-  {
-    icon: LuWallet,
-    title: "Despesas por veículo",
-    description:
-      "Lance os custos de cada veículo (preparação, documentação, reparos) e veja o impacto real na margem antes de fechar o negócio.",
-    accent: "muted",
   },
   {
     icon: LuUsers,
-    title: "Clientes e equipe",
+    title: "Clientes",
     description:
-      "Cadastro de clientes Pessoa Física e Jurídica com validação de CPF/CNPJ, além de gestão de funcionários e cargos da loja.",
+      "Cadastre clientes Pessoa Física ou Jurídica com busca automática de CNPJ e busca de CEP para preencher o endereço — deixando o cadastro mais rápido e sem erros.",
     accent: "violet",
   },
   {
-    icon: LuBuilding,
-    title: "Multi-loja nativo",
+    icon: LuReceipt,
+    title: "Vendas",
     description:
-      "Cada usuário opera dentro de uma filial. Troque de loja com um clique, sem precisar deslogar nem reabrir o sistema.",
-    accent: "sky",
+      "Acompanhe faturamento, lucro, margem, faturamento por período e vendas por vendedor. Veja a lista de vendas ativas e canceladas, abra cada venda em detalhe e emita o contrato na hora.",
+    accent: "emerald",
   },
   {
-    icon: LuShield,
-    title: "Acesso seguro por papel",
+    icon: LuBriefcase,
+    title: "Funcionários",
     description:
-      "Administradores e operadores enxergam apenas o que precisam, com dados financeiros mascarados e sessão isolada por usuário.",
+      "Cadastre os funcionários da loja e seus cargos, mantendo a equipe organizada e pronta para ser vinculada às vendas e às comissões.",
+    accent: "amber",
+  },
+  {
+    icon: LuShieldCheck,
+    title: "Usuários",
+    description:
+      "Crie os acessos ao sistema com permissões elevadas para os donos da loja e permissões reduzidas para os vendedores — cada um enxerga apenas o que precisa.",
     accent: "primary",
+  },
+  {
+    icon: LuFileText,
+    title: "Modelos de contrato",
+    description:
+      "Cadastre quantos modelos quiser, dos tipos Venda, Compra e Consignação. Na hora de fechar o negócio, o contrato sai pronto com os dados do veículo e do cliente.",
+    accent: "violet",
+  },
+  {
+    icon: LuMegaphone,
+    title: "Portais de anúncio",
+    description:
+      "Em breve: integração com os principais portais, como CarrosP e Webmotors. Cadastre o veículo uma única vez no ByeAuto e ele aparece automaticamente em todos os portais.",
+    accent: "sky",
+    soon: true,
+  },
+  {
+    icon: LuStore,
+    title: "Vitrine",
+    description:
+      "Em breve: um site personalizado da sua loja exibindo os veículos disponíveis para os clientes. Uma vitrine própria passa mais confiança e credibilidade para quem vai comprar.",
+    accent: "emerald",
+    soon: true,
   },
 ] as const;
 
@@ -82,7 +84,6 @@ const accentBg: Record<(typeof features)[number]["accent"], string> = {
   amber: "bg-amber-500/10 text-amber-600",
   violet: "bg-violet-500/10 text-violet-600",
   sky: "bg-sky-500/10 text-sky-600",
-  muted: "bg-muted text-muted-foreground",
 };
 
 export function Features() {
@@ -94,24 +95,34 @@ export function Features() {
             Tudo em um só lugar
           </p>
           <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Feito para concessionárias que querem escalar
+            Cada tela pensada para uma parte da sua loja
           </h2>
           <p className="mt-4 text-balance text-muted-foreground">
             Do cadastro do veículo à conclusão da venda — todas as operações da revenda no mesmo
-            painel, com isolamento de dados por filial.
+            painel, com os dados de cada loja separados.
           </p>
         </div>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((f) => {
             const Icon = f.icon;
+            const soon = "soon" in f && f.soon;
             return (
               <article
                 key={f.title}
-                className="group rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
+                className="group relative rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
               >
-                <div className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${accentBg[f.accent]}`}>
-                  <Icon className="h-5 w-5" />
+                <div className="flex items-center justify-between">
+                  <div
+                    className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${accentBg[f.accent]}`}
+                  >
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  {soon && (
+                    <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-amber-600">
+                      Em breve
+                    </span>
+                  )}
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-foreground">{f.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.description}</p>

@@ -13,6 +13,8 @@ export const siteConfig = {
     "Plataforma SaaS multi-loja para concessionárias: estoque em tempo real, vendas com múltiplas formas de pagamento, contratos, consignação e distribuição de lucro, com isolamento por filial.",
   url: "https://byeauto.com.br",
   appUrl: "https://app.byeauto.com.br/login",
+  whatsappUrl:
+    "https://wa.me/5519999044410?text=Ol%C3%A1%2C%20gostaria%20de%20solicitar%20uma%20demonstra%C3%A7%C3%A3o%20da%20plataforma%20BYE%20Auto.",
   ogImage: "/og-image.png",
   keywords: [
     "gestão de concessionária",

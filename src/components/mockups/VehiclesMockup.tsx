@@ -30,7 +30,7 @@ function getStatusClasses(status: VehicleStatus) {
 function FilterSelect({ label }: { label: string }) {
   return (
     <div className="flex h-9 items-center justify-between gap-2 rounded-lg border border-border bg-background px-3 text-xs text-foreground">
-      {label}
+      <span className="truncate">{label}</span>
       <LuChevronDown className="h-3.5 w-3.5 shrink-0 text-muted-foreground" />
     </div>
   );
@@ -38,18 +38,18 @@ function FilterSelect({ label }: { label: string }) {
 
 export function VehiclesMockup() {
   return (
-    <div className="flex h-[520px] w-full bg-background text-foreground sm:h-[580px] lg:h-[640px]">
+    <div className="@container/frame flex h-[520px] w-full bg-background text-foreground sm:h-[580px] lg:h-[640px]">
       <MockSidebar active="/veiculos" />
 
-      <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
+      <div className="@container flex min-w-0 flex-1 flex-col overflow-hidden">
         <MockHeader />
 
-        <main className="flex-1 overflow-auto bg-background p-4 sm:p-6">
-          <div className="space-y-5 sm:space-y-6">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+        <main className="flex-1 overflow-auto bg-background p-4 @xl:p-6">
+          <div className="space-y-6">
+            <div className="flex flex-col gap-4 @lg:flex-row @lg:items-start @lg:justify-between">
               <div className="min-w-0">
-                <h1 className="text-xl font-bold text-foreground sm:text-2xl">Veículos</h1>
-                <p className="text-xs text-muted-foreground sm:text-sm">
+                <h1 className="text-xl font-bold text-foreground @md:text-2xl">Veículos</h1>
+                <p className="text-xs text-muted-foreground @md:text-sm">
                   Gerencie o catálogo de veículos
                 </p>
               </div>
@@ -68,16 +68,16 @@ export function VehiclesMockup() {
             />
 
             <div className="space-y-4">
-              <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+              <div className="flex flex-col gap-3 @xl:flex-row @xl:items-center @xl:justify-between">
                 <div>
-                  <h2 className="text-base font-bold text-foreground sm:text-lg">
+                  <h2 className="text-base font-bold text-foreground @md:text-lg">
                     Lista de veículos
                   </h2>
                   <span className="text-xs text-muted-foreground">
                     {mockVehicles.length} veículos em estoque
                   </span>
                 </div>
-                <div className="grid grid-cols-2 gap-2 sm:flex sm:flex-wrap sm:justify-end">
+                <div className="grid grid-cols-2 gap-2 @md:flex @md:flex-wrap @md:justify-end">
                   <FilterSelect label="Todos os status" />
                   <FilterSelect label="Todas as condições" />
                   <FilterSelect label="Próprios e consignados" />
@@ -88,7 +88,7 @@ export function VehiclesMockup() {
                 </div>
               </div>
 
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 @sm:grid-cols-2 @3xl:grid-cols-3">
                 {mockVehicles.map((v) => (
                   <article
                     key={v.id}

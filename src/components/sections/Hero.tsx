@@ -38,16 +38,16 @@ export function Hero() {
 
             <p className="text-balance text-base leading-relaxed text-muted-foreground sm:text-lg">
               Do cadastro do veículo à venda, ao contrato e à distribuição do lucro entre os
-              sócios — toda a operação da revenda numa única plataforma. Dados isolados por filial,
-              dashboard em tempo real e acesso seguro por usuário.
+              sócios — toda a operação da revenda numa única plataforma. Dados de cada loja
+              separados, painel em tempo real e acesso seguro por usuário.
             </p>
 
             <div className="flex flex-col items-center gap-3 sm:flex-row sm:justify-center lg:justify-start">
               <a
-                href={siteConfig.appUrl}
+                href={siteConfig.whatsappUrl}
                 className="group inline-flex h-12 items-center gap-2 rounded-lg bg-primary px-6 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/20 transition hover:bg-primary/90"
               >
-                Começar agora
+                Solicitar demonstração
                 <LuArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </a>
               <a

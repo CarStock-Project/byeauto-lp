@@ -58,11 +58,11 @@ export function MobileNav() {
               </a>
             ))}
             <a
-              href={siteConfig.appUrl}
+              href={siteConfig.whatsappUrl}
               onClick={() => setOpen(false)}
               className="rounded-md px-3 py-2 text-muted-foreground transition hover:bg-muted sm:hidden"
             >
-              Entrar
+              Solicitar demonstração
             </a>
           </nav>
         </div>

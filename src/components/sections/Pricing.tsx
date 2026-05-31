@@ -28,33 +28,35 @@ const plans: Plan[] = [
     tagline: "Loja pequena começando a organizar",
     price: "R$ 129,90",
     priceSuffix: "/mês",
-    priceNote: "por loja (1 CNPJ)",
+    priceNote: "por loja (1 CNPJ) • 1 usuário",
     icon: LuStore,
     features: [
-      { label: "Até 30 veículos em estoque", included: true },
+      { label: "Até 40 veículos em estoque", included: true },
       { label: "Cadastro de veículos e despesas", included: true },
-      { label: "Clientes e vendas", included: true },
-      { label: "Dashboard de estoque por status", included: true },
-      { label: "Consignação e contratos", included: false },
-      { label: "Integração CarroSP", included: false },
+      { label: "Clientes PF e PJ (busca de CNPJ e CEP)", included: true },
+      { label: "Vendas e contrato de venda", included: true },
+      { label: "Painel de faturamento, lucro e estoque", included: true },
+      { label: "Funcionários, usuários e permissões", included: false },
+      { label: "Consignação e contratos personalizados", included: false },
     ],
   },
   {
     id: "pro",
     name: "Pro",
-    tagline: "Revenda que quer vender mais",
+    tagline: "Revenda com equipe e consignação",
     price: "R$ 189,90",
     priceSuffix: "/mês",
-    priceNote: "por loja (1 CNPJ)",
+    priceNote: "por loja (1 CNPJ) • até 5 usuários",
     icon: LuBuilding2,
     featured: true,
     features: [
-      { label: "Até 80 veículos em estoque", included: true },
+      { label: "Até 120 veículos em estoque", included: true },
       { label: "Tudo do Essencial", included: true },
-      { label: "Veículos consignados", included: true },
-      { label: "Modelos e contratos (venda, compra, consignação)", included: true },
-      { label: "Funcionários, cargos e ranking de vendedores", included: true },
-      { label: "Integração CarroSP inclusa", included: true, highlight: true },
+      { label: "Funcionários, usuários e permissões", included: true },
+      { label: "Vendas por vendedor e ranking", included: true },
+      { label: "Consignação e contratos (venda, compra, consignação)", included: true },
+      { label: "Rateio de lucro entre sócios e investidores", included: true },
+      { label: "Vitrine da loja — em breve", included: true, highlight: true },
     ],
   },
   {
@@ -66,10 +68,11 @@ const plans: Plan[] = [
     priceNote: "1ª loja • filial +R$ 174 cada",
     icon: LuNetwork,
     features: [
-      { label: "Estoque ilimitado", included: true },
+      { label: "Estoque e usuários ilimitados", included: true },
       { label: "Tudo do Pro", included: true },
-      { label: "Multi-CNPJ (filiais com 40% off)", included: true },
-      { label: "Visão macro consolidada das lojas", included: true },
+      { label: "Multi-loja e multi-CNPJ (filiais)", included: true },
+      { label: "Troca de loja com 1 clique, dados isolados", included: true },
+      { label: "Portais de anúncio (CarrosP, Webmotors) — em breve", included: true, highlight: true },
       { label: "Suporte prioritário", included: true },
     ],
   },
@@ -167,7 +170,7 @@ export function Pricing() {
                 </ul>
 
                 <a
-                  href={siteConfig.appUrl}
+                  href={siteConfig.whatsappUrl}
                   className={cn(
                     "mt-8 inline-flex h-11 w-full items-center justify-center rounded-lg px-5 text-sm font-medium transition",
                     plan.featured
@@ -175,7 +178,7 @@ export function Pricing() {
                       : "border border-border bg-background text-foreground hover:bg-muted",
                   )}
                 >
-                  Começar agora
+                  Solicitar demonstração
                 </a>
               </div>
             );

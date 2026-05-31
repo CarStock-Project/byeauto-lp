@@ -67,24 +67,24 @@ export function Showcase() {
             Conheça as telas do ByeAuto
           </h2>
           <p className="mt-4 text-balance text-muted-foreground">
-            Interface real do produto, renderizada com dados de exemplo. Cada tela é otimizada para
-            uma operação específica da revenda.
+            As telas reais do produto, com dados de exemplo. Cada uma foi pensada para uma parte do
+            dia a dia da revenda.
           </p>
         </div>
 
         <div className="mt-16 space-y-24">
           <ScreenBlock
             eyebrow="Painel"
-            title="Sua operação resumida em uma única tela"
-            description="KPIs principais, distribuição por status, lucro por período e atividade recente — tudo isolado pela filial ativa do usuário."
+            title="Sua loja resumida em uma única tela"
+            description="Faturamento, lucro, total de vendas, ticket médio e a situação do estoque — sempre com os dados da loja ativa, separados das outras lojas."
             bullets={[
-              "Total de veículos e clientes em tempo real",
-              "Gráfico de distribuição por status (donut)",
-              "Lucro bruto por período em gráfico de área",
+              "Faturamento, lucro bruto e ticket médio do período",
+              "Total de vendas e total de clientes da loja",
+              "Situação do estoque com a distribuição por status",
               "Últimas vendas e ranking de vendedores",
             ]}
             icon={LuChartPie}
-            url="app.byeauto.com.br/dashboard"
+            url="app.byeauto.com.br/painel"
           >
             <DashboardMockup />
           </ScreenBlock>
@@ -92,13 +92,13 @@ export function Showcase() {
           <ScreenBlock
             eyebrow="Veículos"
             title="Catálogo completo, do cadastro à venda"
-            description="Lista paginada com abas de Veículos e Despesas, filtros por status, condição e propriedade, mais exportação CSV respeitando os filtros aplicados."
+            description="O estoque e as despesas do veículo no mesmo lugar, com abas de Veículos e Despesas, filtros e exportação da lista em CSV."
             bullets={[
-              "Hierarquia Marca → Modelo → Versão → Veículo",
-              "Status com cores semânticas (Disponível, Reservado, Vendido, Manutenção)",
-              "Condição Novo/Seminovo e veículos próprios ou consignados",
-              "Aba de Despesas e custos lançados por veículo",
-              "Da listagem direto para a venda e a emissão do contrato",
+              "Filtre por disponíveis, vendidos, em manutenção ou consignados",
+              "Status destacado por cor (Disponível, Reservado, Vendido, Manutenção)",
+              "Veículos próprios ou consignados, com a comissão da loja",
+              "Aba de Despesas com os custos lançados por veículo",
+              "Exporte a lista do estoque em CSV com um clique",
             ]}
             icon={LuCar}
             url="app.byeauto.com.br/veiculos"
@@ -110,13 +110,13 @@ export function Showcase() {
           <ScreenBlock
             eyebrow="Vendas"
             title="Feche a venda e veja o lucro na hora"
-            description="Painel com filtros por período e vendedor: faturamento, lucro bruto, margem e ranking de vendedores — sem planilhas."
+            description="Acompanhe faturamento, lucro, margem e o desempenho de cada vendedor; veja as vendas ativas e canceladas e emita o contrato — sem planilhas."
             bullets={[
               "Filtros por período (De / Até) e por vendedor",
               "Faturamento, ticket médio e lucro bruto após custos e despesas",
-              "Margem bruta média e faturamento por período em gráfico",
-              "Ranking de faturamento por vendedor",
-              "Múltiplas formas de pagamento e contrato emitido na negociação",
+              "Margem média e faturamento por período",
+              "Faturamento por vendedor e ranking da equipe",
+              "Vendas ativas e canceladas, com o contrato emitido na hora",
             ]}
             icon={LuReceipt}
             url="app.byeauto.com.br/vendas"
@@ -127,13 +127,12 @@ export function Showcase() {
           <ScreenBlock
             eyebrow="Clientes"
             title="Pessoa Física ou Jurídica, no mesmo fluxo"
-            description="Cadastro unificado com validação de CPF/CNPJ e autopreenchimento dos dados da empresa. Busca por nome, email ou documento."
+            description="Cadastro unificado de Pessoa Física e Jurídica, com busca de CNPJ e busca de CEP para preencher o endereço sem digitar tudo à mão."
             bullets={[
-              "Validação de CPF, CNPJ e Inscrição Estadual",
-              "Autopreenchimento dos dados da empresa pelo CNPJ",
-              "Múltiplos endereços e telefones por cliente",
-              "Busca instantânea com destaque do termo procurado",
-              "Mesmo email pode existir em filiais diferentes",
+              "Pessoa Física ou Jurídica no mesmo fluxo",
+              "Busca de CNPJ que preenche os dados da empresa",
+              "Busca de CEP para completar o endereço",
+              "Vários endereços e telefones por cliente",
             ]}
             icon={LuUsers}
             url="app.byeauto.com.br/clientes"

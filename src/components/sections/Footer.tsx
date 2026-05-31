@@ -46,15 +46,11 @@ export function Footer() {
             <h3 className="text-sm font-semibold text-foreground">Plataforma</h3>
             <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
               <li>
-                <a href={siteConfig.appUrl} className="transition hover:text-foreground">
-                  Entrar
+                <a href={siteConfig.whatsappUrl} className="transition hover:text-foreground">
+                  Solicitar demonstração
                 </a>
               </li>
-              <li>
-                <a href={siteConfig.appUrl} className="transition hover:text-foreground">
-                  Criar conta
-                </a>
-              </li>
+              
             </ul>
           </div>
         </div>

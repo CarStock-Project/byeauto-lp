@@ -28,22 +28,24 @@ export function StatCard({
   valueClassName,
 }: StatCardProps) {
   return (
-    <div className="flex items-start justify-between gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm">
+    <div className="flex items-start justify-between gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm @md:p-5">
       <div className="min-w-0">
-        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{title}</p>
+        <p className="truncate text-[11px] font-medium uppercase tracking-wide text-muted-foreground @md:text-xs">
+          {title}
+        </p>
         <p
           className={cn(
-            "mt-2 text-3xl font-bold tracking-tight text-foreground",
+            "mt-2 truncate text-2xl font-bold leading-tight tracking-tight text-foreground @md:text-lg @2xl:text-2xl",
             valueClassName,
           )}
         >
           {value}
         </p>
-        {hint && <p className="mt-1 text-xs text-muted-foreground">{hint}</p>}
+        {hint && <p className="mt-1 truncate text-xs text-muted-foreground">{hint}</p>}
       </div>
       <span
         className={cn(
-          "flex h-11 w-11 shrink-0 items-center justify-center rounded-xl",
+          "flex h-10 w-10 shrink-0 items-center justify-center rounded-xl @md:h-11 @md:w-11",
           accentStyles[accent],
         )}
       >

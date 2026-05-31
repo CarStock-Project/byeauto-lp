@@ -25,7 +25,7 @@ export function VehicleStatusChart({ total, slices }: VehicleStatusChartProps) {
         <span className="text-xs text-muted-foreground">{total} no total</span>
       </div>
 
-      <div className="flex flex-col items-center gap-6 sm:flex-row sm:gap-8">
+      <div className="flex flex-col items-center gap-6 @lg:flex-row @lg:gap-8">
         <div className="relative shrink-0">
           <svg
             width={SIZE}

@@ -20,18 +20,18 @@ import { StatCard } from "./StatCard";
 
 export function SalesMockup() {
   return (
-    <div className="flex h-[520px] w-full bg-background text-foreground sm:h-[580px] lg:h-[640px]">
+    <div className="@container/frame flex h-[520px] w-full bg-background text-foreground sm:h-[580px] lg:h-[640px]">
       <MockSidebar active="/vendas" />
 
-      <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
+      <div className="@container flex min-w-0 flex-1 flex-col overflow-hidden">
         <MockHeader />
 
-        <main className="flex-1 overflow-auto bg-background p-4 sm:p-6">
+        <main className="flex-1 overflow-auto bg-background p-4 @xl:p-6">
           <div className="space-y-6">
-            <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+            <div className="flex flex-col gap-4 @lg:flex-row @lg:items-start @lg:justify-between">
               <div className="min-w-0">
-                <h1 className="text-xl font-bold text-foreground sm:text-2xl">Vendas</h1>
-                <p className="max-w-md text-xs text-muted-foreground sm:text-sm">
+                <h1 className="text-xl font-bold text-foreground @md:text-2xl">Vendas</h1>
+                <p className="max-w-md text-xs text-muted-foreground @md:text-sm">
                   Acompanhe o faturamento, lucro e ranking de vendedores; gerencie as vendas
                   registradas.
                 </p>
@@ -51,7 +51,7 @@ export function SalesMockup() {
             />
 
             <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+              <div className="grid grid-cols-1 gap-4 @md:grid-cols-3">
                 <div>
                   <label className="mb-1.5 block text-xs font-medium text-muted-foreground">
                     De
@@ -84,7 +84,7 @@ export function SalesMockup() {
               </div>
             </div>
 
-            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid grid-cols-1 gap-4 @md:grid-cols-2 @4xl:grid-cols-4">
               <StatCard
                 title="Total de vendas"
                 value={salesMetrics.count}
@@ -117,7 +117,7 @@ export function SalesMockup() {
               />
             </div>
 
-            <div className="grid grid-cols-1 gap-4 lg:grid-cols-2">
+            <div className="grid grid-cols-1 gap-4 @3xl:grid-cols-2">
               <MiniAreaChart
                 title="Faturamento por período"
                 max={250000}

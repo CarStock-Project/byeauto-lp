@@ -5,7 +5,7 @@ const benefits = [
     icon: LuTrendingUp,
     title: "Lucro claro em cada venda",
     description:
-      "Acompanhe o lucro líquido, o rateio entre sócios e a saúde do estoque sem montar planilhas — tudo calculado pela plataforma.",
+      "Acompanhe o lucro, o rateio entre sócios e a saúde do estoque sem montar planilhas — tudo calculado pela plataforma.",
   },
   {
     icon: LuRefreshCw,
