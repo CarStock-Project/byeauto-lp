@@ -57,7 +57,7 @@ const plans: Plan[] = [
       { label: "Consignação e contratos (venda, compra, consignação)", included: true },
       { label: "Rateio de lucro entre sócios e investidores", included: true },
       { label: "Vitrine da loja", included: true, highlight: true },
-      { label: "Portal de anúncio (CarrosP)", included: true, highlight: true },
+      { label: "Portal de anúncio (CarroSP)", included: true, highlight: true },
     ],
   },
   {
@@ -73,7 +73,7 @@ const plans: Plan[] = [
       { label: "Tudo do Pro", included: true },
       { label: "Multi-loja e multi-CNPJ (filiais)", included: true },
       { label: "Troca de loja com 1 clique, dados isolados", included: true },
-      { label: "Portais de anúncio (CarrosP, Webmotors) — em breve", included: true, highlight: true },
+      { label: "Portais de anúncio (CarroSP, Webmotors) — em breve", included: true, highlight: true },
       { label: "Suporte prioritário", included: true },
     ],
   },
