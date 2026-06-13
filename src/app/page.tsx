@@ -6,6 +6,7 @@ import { Hero } from "@/components/sections/Hero";
 import { Pricing } from "@/components/sections/Pricing";
 import { Showcase } from "@/components/sections/Showcase";
 import { SiteHeader } from "@/components/sections/SiteHeader";
+import { Vitrine } from "@/components/sections/Vitrine";
 
 export default function HomePage() {
   return (
@@ -15,6 +16,7 @@ export default function HomePage() {
         <Hero />
         <Features />
         <Showcase />
+        <Vitrine />
         <Benefits />
         <Pricing />
         <CTA />

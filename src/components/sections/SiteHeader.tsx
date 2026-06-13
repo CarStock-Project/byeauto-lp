@@ -35,6 +35,9 @@ export function SiteHeader() {
           <a href="#telas" className="text-muted-foreground transition hover:text-foreground">
             Telas
           </a>
+          <a href="#vitrine" className="text-muted-foreground transition hover:text-foreground">
+            Vitrine
+          </a>
           <a href="#beneficios" className="text-muted-foreground transition hover:text-foreground">
             Benefícios
           </a>

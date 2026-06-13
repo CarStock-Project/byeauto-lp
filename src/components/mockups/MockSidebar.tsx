@@ -49,7 +49,7 @@ const menuGroups: { title: string; items: MenuItem[] }[] = [
     items: [
       { id: "/contratos", label: "Modelos de contrato", icon: LuFileText },
       { id: "/portais", label: "Portais de anúncio", icon: LuMegaphone, soon: true },
-      { id: "/vitrine", label: "Vitrine", icon: LuStore, soon: true },
+      { id: "/vitrine", label: "Vitrine", icon: LuStore },
     ],
   },
 ];

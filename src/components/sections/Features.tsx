@@ -72,9 +72,8 @@ const features = [
     icon: LuStore,
     title: "Vitrine",
     description:
-      "Em breve: um site personalizado da sua loja exibindo os veículos disponíveis para os clientes. Uma vitrine própria passa mais confiança e credibilidade para quem vai comprar.",
+      "Um site próprio da sua loja, com a sua marca, exibindo o estoque automaticamente. O cliente interessado fala no WhatsApp ou envia uma proposta, pede para vender o carro dele ou simula um financiamento — e tudo cai direto no seu painel, em Leads e Oportunidades.",
     accent: "emerald",
-    soon: true,
   },
 ] as const;
 
