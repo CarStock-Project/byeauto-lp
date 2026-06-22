@@ -1,5 +1,6 @@
 import { LuBuilding2, LuCheck, LuNetwork, LuStore, LuX } from "react-icons/lu";
 
+import { Reveal } from "@/components/Reveal";
 import { cn, siteConfig } from "@/lib/utils";
 
 interface PlanFeature {
@@ -85,7 +86,7 @@ export function Pricing() {
   return (
     <section id="planos" className="border-b border-border bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Planos</p>
           <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             Escolha o plano da sua operação
@@ -94,94 +95,97 @@ export function Pricing() {
             Do primeiro veículo à rede com filiais. Comece grátis e cresça quando precisar — sem
             fidelidade.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid grid-cols-1 items-start gap-6 md:grid-cols-3">
-          {plans.map((plan) => {
+          {plans.map((plan, i) => {
             const Icon = plan.icon;
             return (
-              <div
-                key={plan.id}
-                className={cn(
-                  "relative flex h-full flex-col rounded-3xl border bg-card p-6 shadow-sm sm:p-8",
-                  plan.featured
-                    ? "border-primary shadow-lg shadow-primary/10 md:-translate-y-3"
-                    : "border-border",
-                )}
-              >
-                {plan.featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground shadow-sm">
-                    Mais popular
-                  </span>
-                )}
-
-                <div className="flex items-center gap-2.5">
-                  <span
-                    className={cn(
-                      "flex h-10 w-10 items-center justify-center rounded-xl",
-                      plan.featured ? "bg-primary text-primary-foreground" : "bg-primary/10 text-primary",
-                    )}
-                  >
-                    <Icon className="h-5 w-5" />
-                  </span>
-                  <h3 className="text-xl font-bold tracking-tight text-foreground">{plan.name}</h3>
-                </div>
-                <p className="mt-2 text-sm text-muted-foreground">{plan.tagline}</p>
-
-                <div className="mt-6">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-4xl font-bold tracking-tight text-foreground">
-                      {plan.price}
-                    </span>
-                    <span className="text-sm font-medium text-muted-foreground">
-                      {plan.priceSuffix}
-                    </span>
-                  </div>
-                  <p className="mt-1 text-xs text-muted-foreground">{plan.priceNote}</p>
-                </div>
-
-                <div className="my-6 h-px w-full bg-border" />
-
-                <ul className="space-y-3">
-                  {plan.features.map((f) => (
-                    <li key={f.label} className="flex items-start gap-2.5 text-sm">
-                      {f.included ? (
-                        <LuCheck
-                          className={cn(
-                            "mt-0.5 h-4 w-4 shrink-0",
-                            f.highlight ? "text-primary" : "text-[var(--status-available)]",
-                          )}
-                        />
-                      ) : (
-                        <LuX className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground/50" />
-                      )}
-                      <span
-                        className={cn(
-                          f.included
-                            ? f.highlight
-                              ? "font-medium text-primary"
-                              : "text-foreground"
-                            : "text-muted-foreground/60",
-                        )}
-                      >
-                        {f.label}
-                      </span>
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={siteConfig.whatsappUrl}
+              <Reveal key={plan.id} delay={i * 100}>
+                <div
                   className={cn(
-                    "mt-8 inline-flex h-11 w-full items-center justify-center rounded-lg px-5 text-sm font-medium transition",
+                    "relative flex h-full flex-col rounded-3xl border bg-card p-6 shadow-sm sm:p-8",
                     plan.featured
-                      ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90"
-                      : "border border-border bg-background text-foreground hover:bg-muted",
+                      ? "border-primary shadow-lg shadow-primary/10 md:-translate-y-3"
+                      : "border-border",
                   )}
                 >
-                  Solicitar demonstração
-                </a>
-              </div>
+                  {plan.featured && (
+                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-primary px-3 py-1 text-[11px] font-semibold uppercase tracking-wide text-primary-foreground shadow-sm">
+                      Mais popular
+                    </span>
+                  )}
+
+                  <div className="flex items-center gap-2.5">
+                    <span
+                      className={cn(
+                        "flex h-10 w-10 items-center justify-center rounded-xl",
+                        plan.featured
+                          ? "bg-primary text-primary-foreground"
+                          : "bg-primary/10 text-primary",
+                      )}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </span>
+                    <h3 className="text-xl font-bold tracking-tight text-foreground">{plan.name}</h3>
+                  </div>
+                  <p className="mt-2 text-sm text-muted-foreground">{plan.tagline}</p>
+
+                  <div className="mt-6">
+                    <div className="flex items-baseline gap-1.5">
+                      <span className="text-4xl font-bold tracking-tight text-foreground">
+                        {plan.price}
+                      </span>
+                      <span className="text-sm font-medium text-muted-foreground">
+                        {plan.priceSuffix}
+                      </span>
+                    </div>
+                    <p className="mt-1 text-xs text-muted-foreground">{plan.priceNote}</p>
+                  </div>
+
+                  <div className="my-6 h-px w-full bg-border" />
+
+                  <ul className="space-y-3">
+                    {plan.features.map((f) => (
+                      <li key={f.label} className="flex items-start gap-2.5 text-sm">
+                        {f.included ? (
+                          <LuCheck
+                            className={cn(
+                              "mt-0.5 h-4 w-4 shrink-0",
+                              f.highlight ? "text-primary" : "text-[var(--status-available)]",
+                            )}
+                          />
+                        ) : (
+                          <LuX className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground/50" />
+                        )}
+                        <span
+                          className={cn(
+                            f.included
+                              ? f.highlight
+                                ? "font-medium text-primary"
+                                : "text-foreground"
+                              : "text-muted-foreground/60",
+                          )}
+                        >
+                          {f.label}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <a
+                    href={siteConfig.whatsappUrl}
+                    className={cn(
+                      "mt-8 inline-flex h-11 w-full items-center justify-center rounded-lg px-5 text-sm font-medium transition",
+                      plan.featured
+                        ? "bg-primary text-primary-foreground shadow-sm hover:bg-primary/90"
+                        : "border border-border bg-background text-foreground hover:bg-muted",
+                    )}
+                  >
+                    Solicitar demonstração
+                  </a>
+                </div>
+              </Reveal>
             );
           })}
         </div>

@@ -131,6 +131,10 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
+        {/* Sem JS, garante que o conteúdo com efeito de entrada apareça normalmente */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
       </head>
       <body className="min-h-screen overflow-x-hidden bg-background font-sans">{children}</body>
     </html>

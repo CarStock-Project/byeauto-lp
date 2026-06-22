@@ -1,5 +1,7 @@
 import { LuClock, LuLock, LuRefreshCw, LuTrendingUp } from "react-icons/lu";
 
+import { Reveal } from "@/components/Reveal";
+
 const benefits = [
   {
     icon: LuTrendingUp,
@@ -35,7 +37,7 @@ export function Benefits() {
       <div className="absolute inset-0 bg-grid-dark opacity-[0.06]" />
 
       <div className="relative mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary-foreground/70">
             Por que ByeAuto
           </p>
@@ -46,24 +48,23 @@ export function Benefits() {
             Resolvemos os problemas reais de quem opera várias lojas: visibilidade, isolamento de
             dados e velocidade no chão da concessionária.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {benefits.map((b) => {
+          {benefits.map((b, i) => {
             const Icon = b.icon;
             return (
-              <div
-                key={b.title}
-                className="rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 backdrop-blur"
-              >
-                <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary-foreground/10 text-primary-foreground">
-                  <Icon className="h-5 w-5" />
+              <Reveal key={b.title} delay={(i % 4) * 80}>
+                <div className="h-full rounded-2xl border border-primary-foreground/15 bg-primary-foreground/5 p-6 backdrop-blur">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-lg bg-primary-foreground/10 text-primary-foreground">
+                    <Icon className="h-5 w-5" />
+                  </div>
+                  <h3 className="mt-4 text-base font-semibold">{b.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-primary-foreground/75">
+                    {b.description}
+                  </p>
                 </div>
-                <h3 className="mt-4 text-base font-semibold">{b.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-primary-foreground/75">
-                  {b.description}
-                </p>
-              </div>
+              </Reveal>
             );
           })}
         </div>

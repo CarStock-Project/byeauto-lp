@@ -1,6 +1,7 @@
 import { LuArrowRight, LuPlay } from "react-icons/lu";
 
 import { CarIllustration } from "@/components/icons/CarIllustration";
+import { Reveal } from "@/components/Reveal";
 import { siteConfig } from "@/lib/utils";
 
 export function Hero() {
@@ -51,11 +52,11 @@ export function Hero() {
                 <LuArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
               </a>
               <a
-                href="#telas"
+                href="#destaques"
                 className="inline-flex h-12 items-center gap-2 rounded-lg border border-border bg-card px-6 text-sm font-medium text-foreground transition hover:bg-muted"
               >
                 <LuPlay className="h-3.5 w-3.5" />
-                Ver as telas
+                Conhecer a plataforma
               </a>
             </div>
 
@@ -76,7 +77,7 @@ export function Hero() {
           </div>
 
           {/* Visual side */}
-          <div className="relative">
+          <Reveal className="relative">
             <div className="relative overflow-hidden rounded-3xl bg-primary">
               <div className="absolute inset-0 bg-linear-to-br from-primary via-primary to-[oklch(0.32_0.14_260)]" />
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,oklch(1_0_0/0.18),transparent_55%)]" />
@@ -102,7 +103,7 @@ export function Hero() {
                 </div>
               </div>
             </div>
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

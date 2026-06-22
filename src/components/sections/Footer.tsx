@@ -30,13 +30,23 @@ export function Footer() {
                 </a>
               </li>
               <li>
-                <a href="#telas" className="transition hover:text-foreground">
-                  Telas
+                <a href="#destaques" className="transition hover:text-foreground">
+                  Destaques
+                </a>
+              </li>
+              <li>
+                <a href="#vitrine" className="transition hover:text-foreground">
+                  Vitrine
                 </a>
               </li>
               <li>
                 <a href="#beneficios" className="transition hover:text-foreground">
                   Benefícios
+                </a>
+              </li>
+              <li>
+                <a href="#planos" className="transition hover:text-foreground">
+                  Planos
                 </a>
               </li>
             </ul>

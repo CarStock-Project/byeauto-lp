@@ -10,6 +10,8 @@ import {
   LuUsers,
 } from "react-icons/lu";
 
+import { Reveal } from "@/components/Reveal";
+
 const features = [
   {
     icon: LuGauge,
@@ -89,43 +91,44 @@ export function Features() {
   return (
     <section id="features" className="border-b border-border bg-muted/30 py-20 sm:py-28">
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
+        <Reveal className="mx-auto max-w-2xl text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">
             Tudo em um só lugar
           </p>
           <h2 className="mt-3 text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            Cada tela pensada para uma parte da sua loja
+            Cada recurso pensado para uma parte da sua loja
           </h2>
           <p className="mt-4 text-balance text-muted-foreground">
             Do cadastro do veículo à conclusão da venda — todas as operações da revenda no mesmo
             painel, com os dados de cada loja separados.
           </p>
-        </div>
+        </Reveal>
 
         <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((f) => {
+          {features.map((f, i) => {
             const Icon = f.icon;
             const soon = "soon" in f && f.soon;
             return (
-              <article
-                key={f.title}
-                className="group relative rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md"
-              >
-                <div className="flex items-center justify-between">
-                  <div
-                    className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${accentBg[f.accent]}`}
-                  >
-                    <Icon className="h-5 w-5" />
+              <Reveal key={f.title} delay={(i % 3) * 80}>
+                <article className="group relative h-full rounded-2xl border border-border bg-card p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md">
+                  <div className="flex items-center justify-between">
+                    <div
+                      className={`inline-flex h-11 w-11 items-center justify-center rounded-xl ${accentBg[f.accent]}`}
+                    >
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    {soon && (
+                      <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-amber-600">
+                        Em breve
+                      </span>
+                    )}
                   </div>
-                  {soon && (
-                    <span className="rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wide text-amber-600">
-                      Em breve
-                    </span>
-                  )}
-                </div>
-                <h3 className="mt-5 text-lg font-semibold text-foreground">{f.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{f.description}</p>
-              </article>
+                  <h3 className="mt-5 text-lg font-semibold text-foreground">{f.title}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    {f.description}
+                  </p>
+                </article>
+              </Reveal>
             );
           })}
         </div>

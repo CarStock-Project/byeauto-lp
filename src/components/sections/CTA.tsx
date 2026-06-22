@@ -1,12 +1,13 @@
 import { LuArrowRight } from "react-icons/lu";
 
+import { Reveal } from "@/components/Reveal";
 import { siteConfig } from "@/lib/utils";
 
 export function CTA() {
   return (
     <section className="bg-background py-20 sm:py-28">
       <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 text-center shadow-lg sm:p-16">
+        <Reveal className="relative overflow-hidden rounded-3xl border border-border bg-card p-10 text-center shadow-lg sm:p-16">
           <div
             className="absolute -top-24 left-1/2 -z-10 h-[280px] w-[640px] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
             style={{
@@ -33,13 +34,13 @@ export function CTA() {
               <LuArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" />
             </a>
             <a
-              href="#telas"
+              href="#planos"
               className="inline-flex h-12 items-center gap-2 rounded-lg border border-border bg-background px-7 text-sm font-medium text-foreground transition hover:bg-muted"
             >
-              Rever as telas
+              Ver os planos
             </a>
           </div>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

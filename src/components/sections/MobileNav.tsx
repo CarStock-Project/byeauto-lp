@@ -12,7 +12,7 @@ interface MobileNavLink {
 
 const links: MobileNavLink[] = [
   { href: "#features", label: "Funcionalidades" },
-  { href: "#telas", label: "Telas" },
+  { href: "#destaques", label: "Destaques" },
   { href: "#vitrine", label: "Vitrine" },
   { href: "#beneficios", label: "Benefícios" },
   { href: "#planos", label: "Planos" },
